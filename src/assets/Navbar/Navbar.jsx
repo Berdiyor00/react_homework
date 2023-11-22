@@ -5,6 +5,10 @@ import Bar from '../img/2292434-200.png';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openCard, setOpenCard] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const myArrImg =['https://img.freepik.com/free-vector/retro-black-moth-clipart-illustration_74855-10838.jpg?w=360&t=st=1700669970~exp=1700670570~hmac=01730841c67a3f0efcb1cd32f615de44a9837d73f678a6d17f0593c23c519630','https://img.freepik.com/free-vector/working-characters-flat-design-web-banner_1308-128001.jpg?w=360&t=st=1700670012~exp=1700670612~hmac=630f625b8c6fea2562ba982073313de079ec47500149ba83426050f79921c959','https://img.freepik.com/free-vector/contemporary-workspace-flat-composition-with-character-man-sitting-tall-computer-table-illustration_1284-64049.jpg?w=360&t=st=1700670047~exp=1700670647~hmac=2bb1ce8666c0e2296c59fef3239684e8383766c9e14642d097670565610b86e5','https://img.freepik.com/free-vector/boy-using-laptop-cartoon-character-sticker_1308-61547.jpg?w=360&t=st=1700670073~exp=1700670673~hmac=166c621ccf7c7f08f578ada65e671a7dad573ab99e953c51bf5563d69083fccf']
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -13,6 +17,12 @@ const Navbar = () => {
   const Open = () => {
     setOpenCard(!openCard);
   };
+  const changeImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % myArrImg.length);
+  };
+
+
+
 
   return (
     <div>
@@ -63,9 +73,15 @@ const Navbar = () => {
             Repudiandae hic tempora voluptatibus velit ipsam soluta a minima voluptates iste, earum debitis quod, labore
             rerum aperiam maxime eveniet explicabo? Repudiandae.
           </p>
-          <button onClick={Open} className='Open__Text'> Click Me</button>
-        </div>
 
+          <button onClick={Open} className='Open__Text'> Click Me</button>
+    
+        
+        </div>
+<div>
+<img src={myArrImg[currentImageIndex]} alt="" className='arryImgrender' />
+            <button onClick={changeImage}>Next</button>
+</div>
       </section>
     </div>
   );

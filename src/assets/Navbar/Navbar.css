@@ -172,3 +172,22 @@ ul{
     background-color: pink;
 
   }
+  button{
+    cursor: pointer;
+  }
+  .Berdiyor{
+    background-color: red;
+    margin-left: 100px;
+    margin-top: 100px;
+  }
+  .Shohjahon{
+    background-color: blue;
+
+  }
+  .Berdiyors{
+    border: 2px solid red;
+  }
+  .arryImgrender{
+    width: 330px;
+    height: 330px;
+  }
